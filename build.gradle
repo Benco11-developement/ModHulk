@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'fr.benco11'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
+dependencies {
+    implementation "com.github.TheRandomLabs:CurseAPI:master-SNAPSHOT"
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'org.seleniumhq.selenium:selenium-firefox-driver:4.1.1'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.1.1'
+}
