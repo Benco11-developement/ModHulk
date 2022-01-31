@@ -1,9 +1,18 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
 }
+
+sourceCompatibility = targetCompatibility = 1.8
+
+compileJava.options.encoding = 'UTF-8'
 
 group 'fr.benco11'
 version '1.0-SNAPSHOT'
+archivesBaseName = "ModHulk"
+
+mainClassName = "fr.benco11.modhulk.ModHulk"
 
 repositories {
     mavenCentral()
@@ -17,4 +26,10 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.9'
     implementation 'org.seleniumhq.selenium:selenium-firefox-driver:4.1.1'
     implementation 'org.seleniumhq.selenium:selenium-java:4.1.1'
+    implementation 'org.apache.commons:commons-compress:1.21'
+}
+
+shadowJar {
+    project.configurations.implementation.canBeResolved(true)
+    configurations = [project.configurations.implementation]
 }
