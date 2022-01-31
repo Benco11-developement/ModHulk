@@ -57,6 +57,7 @@ public class ModHulk {
 
     public static boolean scanBoolean(String text) {
         System.out.println(text);
-        return scanner.nextBoolean();
+        boolean result = scanner.nextBoolean();scanner.nextLine();
+        return result;
     }
 }
