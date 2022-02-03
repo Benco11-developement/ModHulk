@@ -11,6 +11,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Files;
+import java.util.UUID;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -111,7 +112,7 @@ public class Utils {
 
         public static WebDriver loadDriver() throws IOException {
             String fileName = "geckodriver" + ((isWindows()) ? ".exe" : "");
-            File geckoDriver = new File(System.getProperty("user.home") + File.separator + fileName);
+            File geckoDriver = File.createTempFile(UUID.randomUUID().toString().replace("-", ""), fileName);
             geckoDriver.deleteOnExit();
 
             String os = getOS();

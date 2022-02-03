@@ -50,7 +50,7 @@ public class ModProcessor {
                 success.getAndIncrement();
             } catch(Exception e) {
                 System.out.printf("Error during process of %s, retrying !%n", modUrl);
-                sleepThread(20);
+                sleepThread(50);
                 try {
                     processMod(mcVersion, destinationFolder, processModProject(modUrl));
                     success.getAndIncrement();
@@ -61,7 +61,7 @@ public class ModProcessor {
                         ex.printStackTrace();
                 }
             }
-            sleepThread(20);
+            sleepThread(50);
         });
     }
 
